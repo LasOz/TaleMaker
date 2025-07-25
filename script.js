@@ -1,3 +1,4 @@
+document.fonts.ready.then(() => {
 const imageGallery = document.getElementById('imageGallery');
 const imageInput = document.getElementById('imageInput');
 const canvas = document.getElementById('canvas');
@@ -48,8 +49,8 @@ function draw() {
     ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear the canvas
     ctx.drawImage(startingImage, 0, 0); // Draw the starting image
     ctx.fillStyle = 'black';
-    ctx.fillRect(15, 15, 250, 50);
-    ctx.drawImage(headshot, 15, 14);
+    ctx.fillRect(5, 5, 283, 70);
+    ctx.drawImage(headshot, 5, 5);
     ctx.font = '16.5px UndertaleFont'; // Use your custom font
     ctx.fillStyle = 'white';
     ctx.fillText(textInput1.value, 74, 25); // Draw the text
@@ -82,3 +83,6 @@ loadImages();
 textInput1.addEventListener('input', draw);
 textInput2.addEventListener('input', draw);
 textInput3.addEventListener('input', draw);
+}).catch((error) => {
+    console.error('Error loading fonts:', error);
+});
