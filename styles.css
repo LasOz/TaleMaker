@@ -1,0 +1,22 @@
+@font-face {
+    font-family: 'UndertaleFont'; /* Replace with your desired font name */
+    src: url('fonts/DeterminationMonoWebRegular-Z5oq.ttf') format('truetype'); /* Adjust the path and format */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'UndertaleFont', Arial, sans-serif; /* Use the custom font */
+}
+
+canvas {
+    border: 1px solid #000;
+    margin-top: 10px;
+}
+
+#imageGallery > * {
+    border-style: solid;
+    border-width: 2px;
+    border-color: #000;
+}
