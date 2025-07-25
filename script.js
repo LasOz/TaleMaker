@@ -6,7 +6,7 @@ const ctx = canvas.getContext('2d');
 const textInput1 = document.getElementById('textInput1');
 const textInput2 = document.getElementById('textInput2');
 const textInput3 = document.getElementById('textInput3');
-const addTextButton = document.getElementById('addTextButton');
+const downloadButton = document.getElementById('downloadButton');
 
 let startingImage = new Image();
 startingImage.src = 'background.png'; // Adjust the path and filename
@@ -83,6 +83,15 @@ loadImages();
 textInput1.addEventListener('input', draw);
 textInput2.addEventListener('input', draw);
 textInput3.addEventListener('input', draw);
+
+// Download button functionality
+downloadButton.addEventListener('click', () => {
+    const link = document.createElement('a');
+    link.download = 'undertale.png'; // Set the name for the downloaded file
+    link.href = canvas.toDataURL('image/png'); // Convert canvas to data URL
+    link.click(); // Trigger the download
+});
+
 }).catch((error) => {
     console.error('Error loading fonts:', error);
 });
